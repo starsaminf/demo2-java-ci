@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'checkstyle'
+}
+
+repositories {
+    jcenter()
+}
+
+checkstyle {
+    toolVersion = '8.37'
+    configFile = file("${rootProject.rootDir}/config/checkstyle/checkstyle.xml")
+}
+
+dependencies {
+    implementation 'com.google.guava:guava:29.0-jre'
+    testImplementation 'org.testng:testng:7.2.0'
+}
+
+application {
+    mainClassName = 'github.actions.demo.java.App'
+}
+
+test {
+    useTestNG()
+}

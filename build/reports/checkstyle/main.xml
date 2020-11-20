@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.37">
+<file name="/srv/projects_personal/github-actions-demo-java/src/main/java/github/actions/demo/java/App.java">
+<error line="7" column="5" severity="error" message="Class &apos;App&apos; looks like designed for extension (can be subclassed), but the method &apos;getGreeting&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;App&apos; final or making the method &apos;getGreeting&apos; static/final/abstract/empty, or adding allowed annotation for the method." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+<error line="7" column="5" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="11" column="5" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="11" column="29" severity="error" message="Parameter args should be final." source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
+</file>
+</checkstyle>
