@@ -5,7 +5,7 @@ package github.actions.demo.java;
 
 public class App {
     public String getGreeting() {
-        return "Hello world.2"
+        return "Hello world.2";
     }
 
     public static void main(String[] args) {
