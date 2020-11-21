@@ -4,6 +4,10 @@ plugins {
     id 'checkstyle'
 }
 
+group = 'demo.github.ci.java'
+version = '1'
+sourceCompatibility = '11'
+
 repositories {
     jcenter()
 }
@@ -13,6 +17,7 @@ checkstyle {
     configFile = file("${rootProject.rootDir}/config/checkstyle/checkstyle.xml")
 }
 
+
 dependencies {
     implementation 'com.google.guava:guava:29.0-jre'
     testImplementation 'org.testng:testng:7.2.0'
@@ -20,6 +25,12 @@ dependencies {
 
 application {
     mainClassName = 'github.actions.demo.java.App'
+}
+
+jar {
+    manifest {
+        attributes  'Main-Class': "${mainClassName}"
+    }
 }
 
 test {

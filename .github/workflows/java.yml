@@ -1,0 +1,33 @@
+name: Java CI with Gradle
+
+on:
+  push:
+    branches: '**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up JDK 11
+      uses: actions/setup-java@v1
+      with:
+        java-version: 11
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+    - name: Build with Gradle
+      run: ./gradlew test
+    - name: Style Code Report
+      if: failure()
+      uses: actions/upload-artifact@v2
+      with:
+        name: CheckStyle
+        path: build/reports/checkstyle/
+    - name: Building the project
+      run: ./gradlew build
+    - name: Submit Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: artifact
+        path: build/distributions/github-actions-demo-java-1.zip
+  
